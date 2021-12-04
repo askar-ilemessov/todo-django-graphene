@@ -1,0 +1,51 @@
+
+
+query {
+  allTasks {
+    id
+    taskTitle
+    taskText
+    taskStatus
+  }
+}
+
+query {
+  task(taksId :4) {
+    id
+    taskTitle
+    taskText
+    taskStatus
+  }
+}
+
+
+
+mutation createMutation {
+  createTask(taskData: {taskTitle: "Task3", taskText: "Task3", taskStatus: "done"}) {
+    task {
+      taskTitle,
+      taskText,
+      taskStatus
+    }
+  }
+}
+
+
+mutation updateMutation {
+  updateTask(taskData: {id: 6, taskTitle: "task", taskText: "updt task", taskStatus: "later"}) {
+    task {
+      taskTitle,
+      taskText,
+      taskStatus
+    }
+  }
+}
+
+
+mutation deleteMutation{
+  deleteTask(id: 3) {
+    task {
+      id
+    }
+  }
+}
